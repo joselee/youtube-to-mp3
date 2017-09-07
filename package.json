@@ -1,0 +1,15 @@
+{
+  "name": "youtube-to-mp3",
+  "version": "1.0.0",
+  "description": "Converts youtube videos to mp3, and downloads to local disk",
+  "main": "app.js",
+  "dependencies": {
+    "yargs": "^8.0.2",
+    "youtube-mp3-downloader": "^0.5.1",
+    "ytpl": "^0.1.8"
+  },
+  "devDependencies": {},
+  "scripts": {},
+  "author": "Jose Lee",
+  "license": "MIT"
+}
