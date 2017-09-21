@@ -25,9 +25,11 @@ YD.on("progress", data => {});
 YD.on("error", error => console.log(error));
 YD.on("finished", (err, data) => console.log(`Finished (${data.videoId}) ${data.videoTitle}`));
 
-const download = (id) => {
-    console.log(`Starting download: ${id}`);
-    YD.download(id);
+const download = (index, video) => {
+    if(index < 10) {
+        index = `0${index}`;
+    }
+    YD.download(video.id, `${index} - ${video.title}.mp3`);
 };
 
 if(argv.playlist) {
@@ -35,13 +37,14 @@ if(argv.playlist) {
     ytpl(playlistId, (err, playlist) => {
         if (err) throw err;
 
-        for(const video of playlist.items) {
-            download(video.id);
+        for(const [index, video] of playlist.items.entries()) {
+            // console.log(index, video);
+            download(index, video);
         }
     });
 }
 
-if(argv.video){
-    const videoId = url.parse(argv.video, true).query.v;
-    download(videoId);
-}
+// if(argv.video){
+//     const videoId = url.parse(argv.video, true).query.v;
+//     download(videoId);
+// }
