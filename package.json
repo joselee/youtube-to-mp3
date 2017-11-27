@@ -5,6 +5,7 @@
   "main": "app.js",
   "dependencies": {
     "yargs": "^8.0.2",
+    "youtube-info": "^1.1.2",
     "youtube-mp3-downloader": "^0.5.1",
     "ytpl": "^0.1.8"
   },
