@@ -2,7 +2,7 @@ const fs = require("fs");
 const path = require("path");
 const url = require("url");
 const ytpl = require("ytpl");
-const Downloader = require("./Downloader");
+const Downloader = require("./lib");
 const argv = require("yargs")
     .option('playlist', { alias: 'p' })
     .option('video', { alias: 'v' })
